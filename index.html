@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Vinz &amp; Azylle | October 26, 2026</title>
+<meta name="description" content="Join Vinz & Azylle as they say 'I do' on October 26, 2026 at Emily's Garden, Baguio. RSVP, wedding details, timeline, entourage, and more.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --clay:#BA6A4A;
+  --clay-dark:#9C5439;
+  --espresso:#4A342A;
+  --gold:#B8935F;
+  --gold-light:#D9BD8E;
+  --cream:#FAF3E8;
+  --beige:#F0E6D6;
+  --sage-taupe:#A68B6D;
+  --ivory:#FFFDF9;
+  --ink:#3A2A22;
+  --shadow:0 10px 40px rgba(74,52,42,0.12);
+  --shadow-lg:0 20px 60px rgba(74,52,42,0.18);
+  --radius:2px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Poppins',sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  overflow-x:hidden;
+  font-weight:400;
+  line-height:1.7;
+}
+h1,h2,h3,h4{font-family:'Cinzel',serif;font-weight:600;letter-spacing:.04em;color:var(--espresso);}
+.script{font-family:'Great Vibes',cursive;}
+.serif-italic{font-family:'Cormorant Garamond',serif;font-style:italic;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+
+::selection{background:var(--gold-light);color:var(--espresso);}
+
+/* ===== Watercolor Texture Background (signature motif) ===== */
+.texture-bg{
+  position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(ellipse 900px 600px at 8% 10%, rgba(186,106,74,0.06), transparent 60%),
+    radial-gradient(ellipse 800px 700px at 95% 85%, rgba(166,139,109,0.09), transparent 60%),
+    radial-gradient(ellipse 1000px 800px at 50% 50%, rgba(184,147,95,0.05), transparent 70%),
+    var(--cream);
+}
+.corner-floral{
+  position:absolute; width:180px; height:180px; opacity:0.5; pointer-events:none; z-index:1;
+}
+.corner-floral svg{width:100%;height:100%;}
+.corner-tl{top:0;left:0;}
+.corner-br{bottom:0;right:0;transform:rotate(180deg);}
+
+/* ===== Loading Screen ===== */
+#loader{
+  position:fixed;inset:0;z-index:9999;
+  background:var(--espresso);
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity 1s var(--ease), visibility 1s var(--ease);
+}
+#loader.hide{opacity:0;visibility:hidden;}
+.loader-monogram{
+  font-family:'Great Vibes',cursive;
+  font-size:clamp(3.5rem,12vw,6rem);
+  color:var(--gold-light);
+  display:flex;gap:.4em;align-items:center;
+}
+.loader-monogram span{
+  opacity:0; transform:translateY(15px);
+  animation:loaderIn 1.2s var(--ease) forwards;
+}
+.loader-monogram span:nth-child(2){animation-delay:.25s;font-family:'Cormorant Garamond',serif;font-size:.5em;color:var(--gold);}
+.loader-monogram span:nth-child(3){animation-delay:.5s;}
+@keyframes loaderIn{to{opacity:1;transform:translateY(0);}}
+
+/* ===== Nav ===== */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  padding:18px 24px;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .4s var(--ease), padding .4s var(--ease), box-shadow .4s var(--ease);
+}
+nav.scrolled{
+  background:rgba(250,243,232,0.92);
+  backdrop-filter:blur(12px);
+  padding:12px 24px;
+  box-shadow:0 2px 20px rgba(74,52,42,0.08);
+}
+.nav-logo{font-family:'Cinzel',serif;font-size:1.1rem;letter-spacing:.15em;color:var(--ivory);transition:color .4s;}
+nav.scrolled .nav-logo{color:var(--espresso);}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{
+  font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ivory);font-weight:500;position:relative;padding-bottom:4px;
+  transition:color .4s;
+}
+nav.scrolled .nav-links a{color:var(--espresso);}
+.nav-links a::after{
+  content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);
+  transition:width .3s var(--ease);
+}
+.nav-links a:hover::after{width:100%;}
+.nav-toggle{display:none;flex-direction:column;gap:5px;z-index:1001;}
+.nav-toggle span{width:26px;height:2px;background:var(--ivory);transition:.3s;}
+nav.scrolled .nav-toggle span{background:var(--espresso);}
+
+@media(max-width:900px){
+  .nav-links{
+    position:fixed;top:0;right:-100%;width:78%;max-width:320px;height:100vh;
+    background:var(--espresso);flex-direction:column;justify-content:center;
+    align-items:flex-start;padding:2rem 3rem;gap:1.6rem;transition:right .5s var(--ease);
+  }
+  .nav-links.open{right:0;box-shadow:-10px 0 40px rgba(0,0,0,.3);}
+  .nav-links a{color:var(--gold-light) !important;font-size:.85rem;}
+  .nav-toggle{display:flex;}
+  .nav-toggle span{background:var(--ivory) !important;}
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle.open span:nth-child(2){opacity:0;}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+}
+
+/* ===== Hero ===== */
+.hero{
+  position:relative;min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;overflow:hidden;padding:2rem 1.5rem;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:-1;
+  background:
+    linear-gradient(180deg, rgba(58,42,34,.55) 0%, rgba(58,42,34,.35) 45%, rgba(58,42,34,.75) 100%),
+    radial-gradient(ellipse at 30% 20%, rgba(186,106,74,.35), transparent 55%),
+    radial-gradient(ellipse at 75% 80%, rgba(166,139,109,.4), transparent 55%),
+    linear-gradient(135deg,#6b4a38,#4A342A 55%,#3a2a22);
+  will-change:transform;
+}
+.hero-eyebrow{
+  color:var(--gold-light);font-family:'Cinzel',serif;letter-spacing:.35em;
+  font-size:.7rem;text-transform:uppercase;margin-bottom:1.6rem;
+  opacity:0;animation:fadeUp 1s var(--ease) .3s forwards;
+}
+.hero-names{
+  font-family:'Great Vibes',cursive;color:var(--ivory);
+  font-size:clamp(3.2rem,13vw,7.5rem);line-height:1.05;
+  text-shadow:0 4px 30px rgba(0,0,0,.25);
+  opacity:0;animation:fadeUp 1.1s var(--ease) .5s forwards;
+}
+.hero-amp{
+  font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold-light);
+  font-size:clamp(1.4rem,4vw,2.2rem);margin:.2rem 0;
+  opacity:0;animation:fadeUp 1.1s var(--ease) .7s forwards;
+}
+.hero-meta{
+  margin-top:2.2rem;color:var(--ivory);
+  font-family:'Cormorant Garamond',serif;font-size:1.15rem;letter-spacing:.03em;
+  opacity:0;animation:fadeUp 1.1s var(--ease) .9s forwards;
+}
+.hero-meta .divider-dot{color:var(--gold);margin:0 .6em;}
+.hero-meta .venue{display:block;margin-top:.4rem;font-size:1rem;opacity:.85;}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
+.hero-eyebrow,.hero-names,.hero-amp,.hero-meta{transform:translateY(25px);}
+
+.scroll-cue{
+  position:absolute;bottom:2.2rem;left:50%;transform:translateX(-50%);
+  color:var(--ivory);opacity:.7;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
+  display:flex;flex-direction:column;align-items:center;gap:.5rem;
+}
+.scroll-cue .line{width:1px;height:34px;background:var(--gold-light);animation:scrollPulse 2s ease-in-out infinite;}
+@keyframes scrollPulse{0%,100%{transform:scaleY(1);opacity:.6;}50%{transform:scaleY(.5);opacity:1;}}
+
+/* ===== Countdown ===== */
+.countdown-wrap{
+  position:relative;z-index:2;margin-top:2.6rem;
+  display:flex;gap:clamp(.6rem,3vw,1.6rem);
+  flex-wrap:nowrap;justify-content:center;
+  opacity:0;animation:fadeUp 1.1s var(--ease) 1.1s forwards;
+}
+.count-box{
+  background:rgba(255,253,249,0.1);
+  border:1px solid rgba(217,189,142,0.4);
+  backdrop-filter:blur(6px);
+  border-radius:var(--radius);
+  padding:clamp(.6rem,2vw,1.1rem) clamp(.7rem,2.5vw,1.4rem);
+  min-width:clamp(56px,15vw,90px);
+  text-align:center;
+}
+.count-num{
+  font-family:'Cinzel',serif;color:var(--ivory);font-weight:600;
+  font-size:clamp(1.3rem,5vw,2.4rem);line-height:1;
+}
+.count-label{
+  color:var(--gold-light);font-size:clamp(.55rem,1.8vw,.7rem);
+  letter-spacing:.12em;text-transform:uppercase;margin-top:.4rem;display:block;
+}
+
+/* ===== Section generic ===== */
+section{padding:clamp(4rem,10vw,7rem) 1.5rem;position:relative;}
+.section-inner{max-width:1080px;margin:0 auto;}
+.eyebrow{
+  text-align:center;color:var(--clay);font-family:'Cinzel',serif;
+  letter-spacing:.3em;font-size:.72rem;text-transform:uppercase;margin-bottom:1rem;
+}
+.section-title{
+  text-align:center;font-size:clamp(1.9rem,5vw,2.8rem);margin-bottom:.7rem;
+}
+.section-sub{
+  text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;
+  color:var(--sage-taupe);font-size:1.15rem;max-width:560px;margin:0 auto 3rem;
+}
+.rule{
+  width:70px;height:1px;background:var(--gold);margin:1.4rem auto;
+  position:relative;
+}
+.rule::before{content:'❧';position:absolute;top:-11px;left:50%;transform:translateX(-50%);color:var(--gold);font-size:1rem;background:var(--cream);padding:0 8px;}
+
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s var(--ease), transform .9s var(--ease);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* ===== Glass Card base ===== */
+.glass-card{
+  background:rgba(255,253,249,0.65);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(184,147,95,0.25);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  transition:transform .4s var(--ease), box-shadow .4s var(--ease);
+}
+.glass-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
+
+/* ===== Our Wedding / Details ===== */
+.details-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:stretch;}
+@media(max-width:800px){.details-grid{grid-template-columns:1fr;}}
+.detail-card{padding:2.6rem 2rem;text-align:center;}
+.detail-card .icon{font-size:1.8rem;color:var(--clay);margin-bottom:1rem;}
+.detail-card h3{font-size:1.3rem;margin-bottom:.5rem;}
+.detail-card p{color:var(--espresso);opacity:.85;}
+.map-embed{width:100%;height:100%;min-height:280px;border:0;border-radius:var(--radius);filter:sepia(.15) saturate(1.1);}
+
+/* ===== Timeline ===== */
+.timeline{position:relative;max-width:680px;margin:0 auto;}
+.timeline::before{
+  content:'';position:absolute;left:24px;top:0;bottom:0;width:1px;
+  background:linear-gradient(var(--gold-light),var(--clay),var(--gold-light));
+}
+@media(min-width:700px){.timeline::before{left:50%;transform:translateX(-50%);}}
+.t-item{position:relative;padding-left:64px;margin-bottom:2.6rem;}
+@media(min-width:700px){
+  .t-item{width:50%;padding-left:0;margin-bottom:0;padding-bottom:3rem;}
+  .t-item:nth-child(odd){padding-right:3.5rem;text-align:right;}
+  .t-item:nth-child(even){margin-left:50%;padding-left:3.5rem;}
+}
+.t-dot{
+  position:absolute;left:14px;top:4px;width:22px;height:22px;border-radius:50%;
+  background:var(--ivory);border:2px solid var(--clay);
+  display:flex;align-items:center;justify-content:center;font-size:.75rem;z-index:2;
+}
+@media(min-width:700px){
+  .t-item:nth-child(odd) .t-dot{left:auto;right:-11px;}
+  .t-item:nth-child(even) .t-dot{left:-11px;}
+}
+.t-time{font-family:'Cinzel',serif;color:var(--clay);font-size:.85rem;letter-spacing:.08em;margin-bottom:.2rem;}
+.t-title{font-size:1.15rem;color:var(--espresso);font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;}
+
+/* ===== Entourage ===== */
+.ent-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.6rem;}
+.ent-card{padding:2rem 1.6rem;text-align:center;}
+.ent-role{font-family:'Cinzel',serif;font-size:.85rem;color:var(--clay);letter-spacing:.06em;margin-bottom:1rem;text-transform:uppercase;}
+.ent-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--espresso);}
+.ent-name .sub{display:block;font-size:.85rem;opacity:.7;font-style:italic;}
+.ent-card.wide{grid-column:1 / -1;}
+.ent-pair-list{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem 1.4rem;}
+
+/* ===== Dress Code ===== */
+.dress-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.8rem;}
+.dress-card{padding:2.4rem 2rem;}
+.dress-card h4{font-family:'Cinzel',serif;font-size:1rem;color:var(--clay);text-align:center;margin-bottom:1.4rem;letter-spacing:.1em;text-transform:uppercase;}
+.dress-row{display:flex;justify-content:space-between;padding:.9rem 0;border-bottom:1px dashed rgba(184,147,95,.35);}
+.dress-row:last-child{border-bottom:none;}
+.dress-role{font-weight:500;color:var(--espresso);}
+.dress-desc{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--sage-taupe);text-align:right;}
+.palette-swatches{display:flex;justify-content:center;gap:.7rem;margin-top:2rem;}
+.swatch{width:34px;height:34px;border-radius:50%;border:2px solid var(--ivory);box-shadow:0 2px 8px rgba(0,0,0,.15);}
+
+/* ===== Gift ===== */
+.gift-msg{max-width:600px;margin:0 auto 3rem;text-align:center;font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--espresso);}
+.qr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.6rem;max-width:760px;margin:0 auto;}
+.qr-card{padding:2rem 1.4rem;text-align:center;}
+.qr-placeholder{
+  width:150px;height:150px;margin:0 auto 1.2rem;
+  background:repeating-linear-gradient(45deg,var(--beige),var(--beige) 10px,#eee2cd 10px,#eee2cd 20px);
+  border:1px dashed var(--gold);border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cinzel',serif;font-size:.7rem;color:var(--sage-taupe);text-transform:uppercase;letter-spacing:.08em;
+}
+.qr-bank{font-family:'Cinzel',serif;font-size:.95rem;color:var(--clay);letter-spacing:.06em;}
+
+/* ===== Playlist ===== */
+.playlist-card{max-width:640px;margin:0 auto;padding:2rem;text-align:center;}
+.playlist-card h3{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.4rem;margin-bottom:.2rem;}
+.playlist-card .artist{color:var(--sage-taupe);font-size:.9rem;margin-bottom:1.4rem;}
+.yt-wrap{position:relative;width:100%;padding-top:56.25%;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
+.yt-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+
+/* ===== Gallery Upload ===== */
+.gallery-upload{text-align:center;}
+.upload-btn{
+  display:inline-block;margin-top:1.6rem;padding:1rem 2.6rem;
+  background:var(--clay);color:var(--ivory);font-family:'Cinzel',serif;
+  font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
+  border-radius:var(--radius);transition:background .3s var(--ease), transform .3s var(--ease);
+  box-shadow:var(--shadow);
+}
+.upload-btn:hover{background:var(--clay-dark);transform:translateY(-3px);}
+
+/* ===== RSVP ===== */
+.rsvp-section{background:var(--espresso);color:var(--ivory);}
+.rsvp-section .eyebrow{color:var(--gold-light);}
+.rsvp-section .section-title{color:var(--ivory);}
+.rsvp-banner{
+  max-width:560px;margin:0 auto 2.4rem;padding:1.2rem 1.6rem;text-align:center;
+  border:1px solid var(--gold);border-radius:var(--radius);background:rgba(217,189,142,0.08);
+}
+.rsvp-banner .deadline{font-family:'Cinzel',serif;color:var(--gold-light);font-size:1rem;letter-spacing:.06em;margin-bottom:.3rem;}
+.rsvp-banner .note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;}
+.rsvp-banner .strict{display:block;margin-top:.5rem;color:var(--clay-dark);background:var(--gold-light);color:var(--espresso);font-weight:600;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;padding:.35rem;border-radius:2px;}
+.rsvp-frame-wrap{max-width:640px;margin:0 auto;background:var(--ivory);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);}
+.rsvp-frame-wrap iframe{width:100%;height:820px;border:0;display:block;}
+
+/* ===== Prenup Gallery ===== */
+.prenup-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;}
+.prenup-item{
+  aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;position:relative;
+  background:linear-gradient(135deg,var(--beige),#e4d5bc);
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid rgba(184,147,95,.3);
+}
+.prenup-item span{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--sage-taupe);font-size:.9rem;}
+
+/* ===== FAQ ===== */
+.faq-group{margin-bottom:2.6rem;}
+.faq-group-title{
+  font-family:'Cinzel',serif;color:var(--clay);font-size:1rem;letter-spacing:.08em;
+  margin-bottom:1.2rem;text-transform:uppercase;text-align:center;
+}
+.acc-item{
+  border-bottom:1px solid rgba(184,147,95,.3);
+}
+.acc-q{
+  width:100%;text-align:left;padding:1.3rem .5rem;display:flex;justify-content:space-between;align-items:center;
+  font-weight:500;color:var(--espresso);gap:1rem;
+}
+.acc-q .plus{font-family:'Cinzel',serif;color:var(--clay);transition:transform .35s var(--ease);flex-shrink:0;}
+.acc-item.open .plus{transform:rotate(135deg);}
+.acc-a{max-height:0;overflow:hidden;transition:max-height .45s var(--ease);}
+.acc-a-inner{padding:0 .5rem 1.3rem;font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--espresso);opacity:.9;}
+
+/* ===== Footer ===== */
+footer{
+  background:var(--espresso);color:var(--ivory);text-align:center;
+  padding:4rem 1.5rem 2.5rem;
+}
+footer .script{font-size:clamp(2.2rem,6vw,3.2rem);color:var(--gold-light);margin-bottom:1rem;display:block;}
+footer p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;max-width:480px;margin:0 auto;opacity:.85;}
+footer .hashtag{margin-top:1.8rem;font-family:'Cinzel',serif;font-size:.75rem;letter-spacing:.15em;color:var(--gold);}
+footer .credit{margin-top:2.4rem;font-family:'Poppins',sans-serif;font-size:.68rem;opacity:.4;letter-spacing:.05em;}
+
+/* ===== Floating controls ===== */
+.float-btn{
+  position:fixed;bottom:1.6rem;z-index:500;width:46px;height:46px;border-radius:50%;
+  background:var(--clay);color:var(--ivory);display:flex;align-items:center;justify-content:center;
+  box-shadow:var(--shadow);transition:opacity .4s,transform .3s;font-size:1.1rem;
+}
+.float-btn:hover{transform:translateY(-3px);}
+#backToTop{right:1.6rem;opacity:0;pointer-events:none;}
+#backToTop.show{opacity:1;pointer-events:auto;}
+#musicToggle{right:5.4rem;background:var(--espresso);}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important;}
+}
+:focus-visible{outline:2px solid var(--clay);outline-offset:3px;}
+</style>
+</head>
+<body>
+
+<div class="texture-bg"></div>
+
+<!-- Loader -->
+<div id="loader">
+  <div class="loader-monogram"><span>V</span><span>&amp;</span><span>A</span></div>
+</div>
+
+<!-- Nav -->
+<nav id="mainNav">
+  <div class="nav-logo">V &amp; A</div>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#wedding">Our Wedding</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#entourage">Entourage</a></li>
+    <li><a href="#dresscode">Dress Code</a></li>
+    <li><a href="#gifts">Gifts</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#faqs">FAQs</a></li>
+    <li><a href="#rsvp">RSVP</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<header class="hero" id="home">
+  <div class="hero-bg" id="heroBg">
+    <div class="corner-floral corner-tl">
+      <svg viewBox="0 0 200 200" fill="none"><g opacity="0.55"><path d="M20 20 Q40 60 30 100 Q60 90 90 110 Q70 60 100 30 Q60 40 20 20Z" fill="#D9BD8E"/><path d="M15 15 Q50 30 55 70" stroke="#B8935F" stroke-width="1.5" fill="none"/><circle cx="35" cy="35" r="9" fill="#BA6A4A" opacity="0.6"/></g></svg>
+    </div>
+  </div>
+  <p class="hero-eyebrow">We Are Getting Married</p>
+  <h1 class="hero-names">Vinz<span class="hero-amp"><br>&amp;</span><br>Azylle</h1>
+  <p class="hero-meta">
+    October 26, 2026 <span class="divider-dot">•</span> 9:00 AM
+    <span class="venue">Emily's Garden — 353 Youngland Rd., Baguio, Benguet</span>
+  </p>
+
+  <div class="countdown-wrap" id="countdown">
+    <div class="count-box"><span class="count-num" id="cd-days">00</span><span class="count-label">Days</span></div>
+    <div class="count-box"><span class="count-num" id="cd-hours">00</span><span class="count-label">Hours</span></div>
+    <div class="count-box"><span class="count-num" id="cd-mins">00</span><span class="count-label">Minutes</span></div>
+    <div class="count-box"><span class="count-num" id="cd-secs">00</span><span class="count-label">Seconds</span></div>
+  </div>
+
+  <div class="scroll-cue"><span class="line"></span>Scroll</div>
+</header>
+
+<!-- Our Wedding / Details -->
+<section id="wedding">
+  <div class="section-inner">
+    <p class="eyebrow reveal">Save the Date</p>
+    <h2 class="section-title reveal">Our Wedding</h2>
+    <p class="section-sub reveal">Two hearts, one promise, celebrated among the pines of Baguio.</p>
+    <div class="details-grid">
+      <div class="glass-card detail-card reveal">
+        <div class="icon">⛪</div>
+        <h3>Ceremony &amp; Reception</h3>
+        <p>Emily's Garden<br>353 Youngland Rd., Baguio, Benguet</p>
+        <p style="margin-top:.8rem;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--clay);">October 26, 2026 • 9:00 AM</p>
+      </div>
+      <div class="glass-card reveal" style="overflow:hidden;">
+        <iframe class="map-embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Emily%27s+Garden+353+Youngland+Rd+Baguio+Benguet&output=embed"
+          title="Map to Emily's Garden, Baguio"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section id="timeline" style="background:var(--beige);">
+  <div class="section-inner">
+    <p class="eyebrow reveal">The Program</p>
+    <h2 class="section-title reveal">Wedding Timeline</h2>
+    <p class="section-sub reveal">A day, unhurried and full of joy.</p>
+    <div class="timeline">
+      <div class="t-item reveal"><div class="t-dot">⛪</div><div class="t-time">9:00 AM</div><div class="t-title">Ceremony</div></div>
+      <div class="t-item reveal"><div class="t-dot">🍽️</div><div class="t-time">11:00 AM</div><div class="t-title">Miryenda</div></div>
+      <div class="t-item reveal"><div class="t-dot">🎉</div><div class="t-time">11:45 AM</div><div class="t-title">Kasiyahan</div></div>
+      <div class="t-item reveal"><div class="t-dot">🍲</div><div class="t-time">12:30 PM</div><div class="t-title">Tanghalian</div></div>
+      <div class="t-item reveal"><div class="t-dot">🌅</div><div class="t-time">2:30 PM</div><div class="t-title">End of Program</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Entourage -->
+<section id="entourage">
+  <div class="section-inner">
+    <p class="eyebrow reveal">With Gratitude</p>
+    <h2 class="section-title reveal">Our Entourage</h2>
+    <div class="rule reveal"></div>
+
+    <div class="ent-grid" style="margin-bottom:2rem;">
+      <div class="glass-card ent-card wide reveal">
+        <div class="ent-role">Tagapanguna ng Seremonya</div>
+        <div class="ent-name">Ptr. Jonathan Marcuap<span class="sub">Victory Baguio</span></div>
+      </div>
+    </div>
+
+    <div class="ent-grid" style="margin-bottom:2rem;">
+      <div class="glass-card ent-card wide reveal">
+        <div class="ent-role">Mga Minamahal na Magulang</div>
+        <div class="ent-pair-list">
+          <span class="ent-name">Ronald Liwanag</span>
+          <span class="ent-name">Marilyn Liwanag</span>
+          <span class="ent-name">Crisanto Nad (+)</span>
+          <span class="ent-name">Liza Nad</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ent-grid" style="margin-bottom:2rem;">
+      <div class="glass-card ent-card wide reveal">
+        <div class="ent-role">Mga Pangunahing Gabay</div>
+        <div class="ent-pair-list">
+          <span class="ent-name">Edgardo Gutang</span><span class="ent-name">Paz Gutang</span>
+          <span class="ent-name">Aldrin Sadang</span><span class="ent-name">Eva Deveraturda</span>
+          <span class="ent-name">Jomel Libut</span><span class="ent-name">Charito Magtaan</span>
+          <span class="ent-name">Jun Ramirez</span><span class="ent-name">Beth Ramirez</span>
+          <span class="ent-name">Thad Lazatin</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ent-grid">
+      <div class="glass-card ent-card reveal">
+        <div class="ent-role">Ginoong Pandangal</div>
+        <div class="ent-name">Rafael Cholo Liwanag</div>
+      </div>
+      <div class="glass-card ent-card reveal">
+        <div class="ent-role">Binibining Pandangal</div>
+        <div class="ent-name">Patrizia Mari Gutang</div>
+      </div>
+      <div class="glass-card ent-card reveal">
+        <div class="ent-role">Matronang Pandangal</div>
+        <div class="ent-name">Jomarie Castillo</div>
+      </div>
+      <div class="glass-card ent-card reveal">
+        <div class="ent-role">Tagapagdala ng Turban</div>
+        <div class="ent-name">Arnold Abaquez<span class="sub">Aira Lynn Abarquez</span></div>
+      </div>
+      <div class="glass-card ent-card reveal">
+        <div class="ent-role">Tagapagdala ng Laso</div>
+        <div class="ent-name">Argie Pingol<span class="sub">Sofia Laine Pingol</span></div>
+      </div>
+      <div class="glass-card ent-card reveal">
+        <div class="ent-role">Tagapagdala ng Buhangin ng Pagkakaisa</div>
+        <div class="ent-name">Atty. Joey Lacas<span class="sub">Atty. Ma. Erika Amor Lacas</span></div>
+      </div>
+      <div class="glass-card ent-card reveal">
+        <div class="ent-role">Bible Bearer</div>
+        <div class="ent-name">Patrick Deveraturda</div>
+      </div>
+      <div class="glass-card ent-card reveal">
+        <div class="ent-role">Arrhae Bearer</div>
+        <div class="ent-name">Jonn Edric Gutang</div>
+      </div>
+      <div class="glass-card ent-card reveal">
+        <div class="ent-role">Ring Bearer</div>
+        <div class="ent-name">Denise Deveraturda</div>
+      </div>
+      <div class="glass-card ent-card reveal">
+        <div class="ent-role">Flower Boys</div>
+        <div class="ent-name">Aaron Magtaan<span class="sub">Enrico Magtaan</span></div>
+      </div>
+      <div class="glass-card ent-card reveal">
+        <div class="ent-role">Banner Bearers</div>
+        <div class="ent-name">Savion Pingol<span class="sub">Savien Pingol</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Dress Code -->
+<section id="dresscode" style="background:var(--beige);">
+  <div class="section-inner">
+    <p class="eyebrow reveal">What to Wear</p>
+    <h2 class="section-title reveal">Dress Code</h2>
+    <p class="section-sub reveal">Modern rustic elegance, dressed in earth and gold.</p>
+    <div class="dress-grid">
+      <div class="glass-card dress-card reveal">
+        <h4>Guests</h4>
+        <div class="dress-row"><span class="dress-role">Ladies</span><span class="dress-desc">Long Dress or Cocktail Dress</span></div>
+        <div class="dress-row"><span class="dress-role">Gentlemen</span><span class="dress-desc">Long Sleeves or Polo, Black Pants</span></div>
+      </div>
+      <div class="glass-card dress-card reveal">
+        <h4>Principal Sponsors</h4>
+        <div class="dress-row"><span class="dress-role">Ninang</span><span class="dress-desc">Filipiniana-inspired Long Gown</span></div>
+        <div class="dress-row"><span class="dress-role">Ninong</span><span class="dress-desc">Barong, Black Pants</span></div>
+      </div>
+    </div>
+    <div class="palette-swatches reveal">
+      <div class="swatch" style="background:#BA6A4A;"></div>
+      <div class="swatch" style="background:#F0E6D6;"></div>
+      <div class="swatch" style="background:#4A342A;"></div>
+      <div class="swatch" style="background:#B8935F;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Gifts -->
+<section id="gifts">
+  <div class="section-inner">
+    <p class="eyebrow reveal">With Love</p>
+    <h2 class="section-title reveal">Gift Section</h2>
+    <p class="gift-msg reveal">Your presence on our special day is already the best gift ever! 🤍<br><br>
+    Pero kung giliw niyo po kaming handugan ng regalo, we highly suggest a monetary gift na lang po. Big o small, your contribution will help us start our journey as husband and wife.<br><br>
+    Maraming salamat po! 🤎</p>
+    <div class="qr-grid">
+      <div class="glass-card qr-card reveal">
+        <div class="qr-placeholder">Metrobank QR</div>
+        <div class="qr-bank">Metrobank</div>
+      </div>
+      <div class="glass-card qr-card reveal">
+        <div class="qr-placeholder">Landbank QR</div>
+        <div class="qr-bank">Landbank</div>
+      </div>
+      <div class="glass-card qr-card reveal">
+        <div class="qr-placeholder">GCash QR</div>
+        <div class="qr-bank">GCash</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Playlist -->
+<section style="background:var(--beige);">
+  <div class="section-inner">
+    <p class="eyebrow reveal">Set the Mood</p>
+    <h2 class="section-title reveal">Wedding Playlist</h2>
+    <div class="glass-card playlist-card reveal">
+      <h3>Dulo ng Pahina</h3>
+      <p class="artist">Wilbert Ross</p>
+      <div class="yt-wrap">
+        <iframe id="ytPlaylist" src="https://www.youtube.com/embed/Oq4kJ1hJ5Ks?enablejsapi=1" title="Dulo ng Pahina - Wilbert Ross" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Upload -->
+<section id="gallery">
+  <div class="section-inner gallery-upload">
+    <p class="eyebrow reveal">Help Us Remember</p>
+    <h2 class="section-title reveal">Share Your Captured Moments</h2>
+    <p class="section-sub reveal">Snapped a beautiful moment? We'd love to see it through your eyes.</p>
+    <a class="upload-btn reveal" href="https://drive.google.com/drive/folders/1yKMwEDTNWp5hN_gMSoNU-O3CFolnJEEh" target="_blank" rel="noopener">Upload Photos &amp; Videos</a>
+  </div>
+</section>
+
+<!-- Prenup -->
+<section style="background:var(--beige);">
+  <div class="section-inner">
+    <p class="eyebrow reveal">Coming Soon</p>
+    <h2 class="section-title reveal">Our Prenup Photos &amp; Videos</h2>
+    <div class="prenup-grid">
+      <div class="prenup-item reveal"><span>To be updated</span></div>
+      <div class="prenup-item reveal"><span>To be updated</span></div>
+      <div class="prenup-item reveal"><span>To be updated</span></div>
+      <div class="prenup-item reveal"><span>To be updated</span></div>
+      <div class="prenup-item reveal"><span>To be updated</span></div>
+      <div class="prenup-item reveal"><span>To be updated</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQs -->
+<section id="faqs">
+  <div class="section-inner" style="max-width:760px;">
+    <p class="eyebrow reveal">Mga Katanungan</p>
+    <h2 class="section-title reveal">Frequently Asked Questions</h2>
+    <div class="rule reveal"></div>
+
+    <div class="faq-group reveal">
+      <div class="faq-group-title">👥 Guest List &amp; RSVP</div>
+      <div class="acc-item">
+        <button class="acc-q">Pwede ba akong magdala ng Plus-One o kasama?<span class="plus">+</span></button>
+        <div class="acc-a"><div class="acc-a-inner">Eksklusibo lamang ang okasyong ito para sa mga may imbitasyon. Paki-tiyak ang nakalaang bilang ng upuan sa inyong invite. Ang mga wala sa listahan ay hindi makakapasok. Mahigpit na ipinatutupad: "No RSVP, No Entry."</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q">Pwede bang isama ang mga bata?<span class="plus">+</span></button>
+        <div class="acc-a"><div class="acc-a-inner">We love your kids, pero ang ating kasal ay adults-only event po muna — maliban sa ilang kapamilya at sa entourage.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q">Kailan ang deadline ng RSVP?<span class="plus">+</span></button>
+        <div class="acc-a"><div class="acc-a-inner">Paalala lang po: Strictly on or before September 17 ang ating RSVP. Kung wala po kaming maririnig mula sa inyo sa araw na ito, we will assume na hindi kayo makaka-attend.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q">Nag-RSVP ako pero hindi na ako makakarating. Ano ang dapat kong gawin?<span class="plus">+</span></button>
+        <div class="acc-a"><div class="acc-a-inner">Gustong-gusto po naming makasama kayong magdiwang! Pero lubos po naming nauunawaan na minsan ay may mga hindi inaasahang pagbabago sa schedule. Kung sakali pong hindi kayo makakarating, paki-abiso agad sa amin sa lalong madaling panahon. Bawat RSVP po kasi ay binibilang nang maaga, kaya fully prepared at paid for na ang inyong upuan at pagkain!</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q">Hindi ako nakapag-RSVP pero pupunta ako. Pwede ba akong sumulpot na lang?<span class="plus">+</span></button>
+        <div class="acc-a"><div class="acc-a-inner">Oh no! Dahil hindi po kayo nakapag-RSVP on time, aming ipinalagay na hindi kayo makakarating. Sadly, no seats and meals have been reserved for you, at strictly "No RSVP, No Entry" na po tayo sa venue.</div></div>
+      </div>
+    </div>
+
+    <div class="faq-group reveal">
+      <div class="faq-group-title">📍 Venue, Schedule &amp; Attire</div>
+      <div class="acc-item">
+        <button class="acc-q">Anong oras ako dapat dumating?<span class="plus">+</span></button>
+        <div class="acc-a"><div class="acc-a-inner">Magsisimula ang kasal nang eksaktong 9:00 AM, kaya dapat 8:30 AM nandoon na kayo para iwas-haggard sa pag-park at registration. Huwag po tayong malalate! Walang Filipino Time!</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q">May parking ba sa venue?<span class="plus">+</span></button>
+        <div class="acc-a"><div class="acc-a-inner">Yes, may available parking spaces naman for everyone sa venue! 🚗 Pero take note: First come, first served po ito.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q">Indoors ba o outdoors ang event?<span class="plus">+</span></button>
+        <div class="acc-a"><div class="acc-a-inner">Gaganapin po sa labas o outdoor ang ating ceremony at reception.<br>👠 Shoe Alert: Dahil ang venue po natin ay may damuhan, cobblestones, at mga hagdan, iwasan po muna natin ang mga stilettos! We highly recommend wearing block heels, wedges, o flats na lang para super comfy kayo habang umiikot sa event.<br>🧥 Baguio Weather Reminder: Magdala na rin po kayo ng light jacket o shawl just in case lumamig ang panahon!</div></div>
+      </div>
+    </div>
+
+    <div class="faq-group reveal">
+      <div class="faq-group-title">🏡 Accommodations &amp; Rooms</div>
+      <div class="acc-item">
+        <button class="acc-q">Libre ba ang accommodation namin?<span class="plus">+</span></button>
+        <div class="acc-a"><div class="acc-a-inner">Yes! Sagot na namin ang room ninyo sa venue para hassle-free ang inyong stay.<br>Check-in: Linggo, Oct 25 at 2:00 PM<br>Check-out: Lunes, Oct 26 (pagkatapos ng event)</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q">Paano ang room assignments?<span class="plus">+</span></button>
+        <div class="acc-a"><div class="acc-a-inner">If you'd like to stay, please note na room-sharing po ito with other guests and family. Don't worry, kami na ang personal na mag-aayos ng room allocations para siguradong magkakasama ang magkakabarkada at pamilya! We'll send your room details on September 19.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q">I prefer a private room sana. Can I just upgrade or pay for my own space?<span class="plus">+</span></button>
+        <div class="acc-a"><div class="acc-a-inner">Since we blocked out the entire venue, fixed na po ang aming room configurations. If you strongly prefer a private accommodation outside of our allocated rooms, you are super welcome to book a hotel nearby at your own expense. Just please let us know para ma-adjust namin ang headcount!</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q">Pwede ba akong mag-extend ng stay sa Baguio?<span class="plus">+</span></button>
+        <div class="acc-a"><div class="acc-a-inner">Feel free to arrive early or stay longer — basta extra nights will be at your own expense. Paki-inform lang kami on or before our RSVP deadline para ma-check namin ang room availability sa venue, or we can help you find other great spots nearby!</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RSVP -->
+<section id="rsvp" class="rsvp-section">
+  <div class="section-inner">
+    <p class="eyebrow reveal">Kindly Respond</p>
+    <h2 class="section-title reveal">RSVP</h2>
+    <div class="rsvp-banner reveal">
+      <div class="deadline">RSVP Deadline — September 17, 2026</div>
+      <div class="note">Kindly submit your RSVP on or before September 17, 2026.</div>
+      <span class="strict">No RSVP • No Entry</span>
+    </div>
+    <div class="rsvp-frame-wrap reveal">
+      <iframe src="https://script.google.com/macros/s/AKfycbzeHpMDFGmPKdD1l1Jn-29heB3BUBb6E-CNfsXp5r5FzGMnhsUflqOrrdg1_rP2euJzWg/exec" title="RSVP Form" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <span class="script">Vinz &amp; Azylle</span>
+  <p>We can't wait to celebrate this beautiful day with you.<br>Thank you for being part of our love story.<br><br>With love,<br>Vinz &amp; Azylle</p>
+  <div class="hashtag">#VinzAndAzylle2026</div>
+  <div class="credit">Made with love · Love, Anne</div>
+</footer>
+
+<button class="float-btn" id="musicToggle" aria-label="Toggle background music" title="Music">🔇</button>
+<button class="float-btn" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+
+<script>
+// ===== Loader =====
+window.addEventListener('load', () => {
+  setTimeout(() => document.getElementById('loader').classList.add('hide'), 900);
+});
+
+// ===== Nav scroll state =====
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+  document.getElementById('backToTop').classList.toggle('show', window.scrollY > 700);
+  // simple parallax
+  const heroBg = document.getElementById('heroBg');
+  if(heroBg && window.scrollY < window.innerHeight){
+    heroBg.style.transform = 'translateY(' + (window.scrollY * 0.3) + 'px)';
+  }
+}, {passive:true});
+
+// ===== Mobile nav toggle =====
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => {
+  navToggle.classList.toggle('open');
+  navLinks.classList.toggle('open');
+});
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  navToggle.classList.remove('open');
+  navLinks.classList.remove('open');
+}));
+
+// ===== Countdown =====
+const weddingDate = new Date('2026-10-26T09:00:00+08:00').getTime();
+function updateCountdown(){
+  const now = new Date().getTime();
+  const diff = weddingDate - now;
+  if(diff <= 0){
+    document.getElementById('cd-days').textContent = '00';
+    document.getElementById('cd-hours').textContent = '00';
+    document.getElementById('cd-mins').textContent = '00';
+    document.getElementById('cd-secs').textContent = '00';
+    return;
+  }
+  const d = Math.floor(diff/(1000*60*60*24));
+  const h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  const m = Math.floor((diff%(1000*60*60))/(1000*60));
+  const s = Math.floor((diff%(1000*60))/1000);
+  document.getElementById('cd-days').textContent = String(d).padStart(2,'0');
+  document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+  document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
+  document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ===== Scroll reveal =====
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      io.unobserve(e.target);
+    }
+  });
+}, {threshold:0.15});
+revealEls.forEach(el => io.observe(el));
+
+// ===== Accordion =====
+document.querySelectorAll('.acc-item').forEach(item => {
+  const q = item.querySelector('.acc-q');
+  const a = item.querySelector('.acc-a');
+  q.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    item.closest('.faq-group').querySelectorAll('.acc-item').forEach(other => {
+      other.classList.remove('open');
+      other.querySelector('.acc-a').style.maxHeight = null;
+    });
+    if(!isOpen){
+      item.classList.add('open');
+      a.style.maxHeight = a.scrollHeight + 'px';
+    }
+  });
+});
+
+// ===== Back to top =====
+document.getElementById('backToTop').addEventListener('click', () => {
+  window.scrollTo({top:0, behavior:'smooth'});
+});
+
+// ===== Background music toggle (controls the playlist embed's mute state via a hidden mirrored player) =====
+let musicOn = false;
+const musicBtn = document.getElementById('musicToggle');
+let ytAudio;
+function loadYTApi(){
+  const tag = document.createElement('script');
+  tag.src = 'https://www.youtube.com/iframe_api';
+  document.body.appendChild(tag);
+}
+window.onYouTubeIframeAPIReady = function(){
+  ytAudio = new YT.Player('ytHiddenPlayer', {
+    height:'0', width:'0', videoId:'Oq4kJ1hJ5Ks',
+    playerVars:{ autoplay:0, loop:1, playlist:'Oq4kJ1hJ5Ks' },
+    events:{ onReady: () => {} }
+  });
+};
+const hiddenDiv = document.createElement('div');
+hiddenDiv.id = 'ytHiddenPlayer';
+hiddenDiv.style.cssText = 'position:fixed;bottom:0;left:0;width:0;height:0;opacity:0;pointer-events:none;';
+document.body.appendChild(hiddenDiv);
+loadYTApi();
+
+musicBtn.addEventListener('click', () => {
+  musicOn = !musicOn;
+  musicBtn.textContent = musicOn ? '🔊' : '🔇';
+  if(!ytAudio || !ytAudio.playVideo) return;
+  if(musicOn){ ytAudio.unMute(); ytAudio.playVideo(); }
+  else { ytAudio.pauseVideo(); }
+});
+</script>
+</body>
+</html>
