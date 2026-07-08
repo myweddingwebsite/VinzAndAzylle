@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-<title>Vinz &amp; Azylle | October 26, 2026</title>
-<meta name="description" content="Join Vinz & Azylle as they say 'I do' on October 26, 2026 at Emily's Garden, Baguio. RSVP, wedding details, timeline, entourage, and more.">
+<title>Vinz &amp; Azylle | Oktubre 26, 2026</title>
+<meta name="description" content="Samahan sina Vinz at Azylle sa kanilang kasal sa Oktubre 26, 2026 sa Emily's Garden, Baguio. RSVP, detalye ng kasal, programa, entourage, at marami pa.">
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -278,9 +278,17 @@ section{padding:clamp(4rem,10vw,7rem) 1.5rem;position:relative;}
 .ent-card{padding:2rem 1.6rem;text-align:center;}
 .ent-role{font-family:'Cinzel',serif;font-size:.85rem;color:var(--clay);letter-spacing:.06em;margin-bottom:1rem;text-transform:uppercase;}
 .ent-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--espresso);}
-.ent-name .sub{display:block;font-size:.85rem;opacity:.7;font-style:italic;}
+/* Companion name kept the SAME size/weight as the primary name, just on its own line */
+.ent-name .sub{display:block;font-size:1em;opacity:1;font-style:normal;margin-top:.15rem;}
 .ent-card.wide{grid-column:1 / -1;}
 .ent-pair-list{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem 1.4rem;}
+/* Forced 2-column grid for Magulang / Pangunahing Gabay groups, desktop AND mobile */
+.ent-2col{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:.9rem 1.2rem;
+}
+.ent-2col .ent-name{font-size:1.1rem;}
 
 /* ===== Dress Code ===== */
 .dress-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.8rem;}
@@ -334,7 +342,7 @@ section{padding:clamp(4rem,10vw,7rem) 1.5rem;position:relative;}
 }
 .rsvp-banner .deadline{font-family:'Cinzel',serif;color:var(--gold-light);font-size:1rem;letter-spacing:.06em;margin-bottom:.3rem;}
 .rsvp-banner .note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;}
-.rsvp-banner .strict{display:block;margin-top:.5rem;color:var(--clay-dark);background:var(--gold-light);color:var(--espresso);font-weight:600;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;padding:.35rem;border-radius:2px;}
+.rsvp-banner .strict{display:block;margin-top:.5rem;background:var(--gold-light);color:var(--espresso);font-weight:600;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;padding:.35rem;border-radius:2px;}
 .rsvp-frame-wrap{max-width:640px;margin:0 auto;background:var(--ivory);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);}
 .rsvp-frame-wrap iframe{width:100%;height:820px;border:0;display:block;}
 
@@ -373,19 +381,19 @@ footer{
 }
 footer .script{font-size:clamp(2.2rem,6vw,3.2rem);color:var(--gold-light);margin-bottom:1rem;display:block;}
 footer p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;max-width:480px;margin:0 auto;opacity:.85;}
-footer .hashtag{margin-top:1.8rem;font-family:'Cinzel',serif;font-size:.75rem;letter-spacing:.15em;color:var(--gold);}
-footer .credit{margin-top:2.4rem;font-family:'Poppins',sans-serif;font-size:.68rem;opacity:.4;letter-spacing:.05em;}
+footer .credit{margin-top:2.4rem;font-family:'Poppins',sans-serif;font-size:.72rem;opacity:.55;letter-spacing:.05em;}
+footer .credit a{color:var(--gold-light);opacity:1;border-bottom:1px solid rgba(217,189,142,.4);transition:opacity .3s;}
+footer .credit a:hover{opacity:.75;}
 
 /* ===== Floating controls ===== */
 .float-btn{
-  position:fixed;bottom:1.6rem;z-index:500;width:46px;height:46px;border-radius:50%;
+  position:fixed;bottom:1.6rem;right:1.6rem;z-index:500;width:46px;height:46px;border-radius:50%;
   background:var(--clay);color:var(--ivory);display:flex;align-items:center;justify-content:center;
   box-shadow:var(--shadow);transition:opacity .4s,transform .3s;font-size:1.1rem;
 }
 .float-btn:hover{transform:translateY(-3px);}
-#backToTop{right:1.6rem;opacity:0;pointer-events:none;}
+#backToTop{opacity:0;pointer-events:none;}
 #backToTop.show{opacity:1;pointer-events:auto;}
-#musicToggle{right:5.4rem;background:var(--espresso);}
 
 @media(prefers-reduced-motion:reduce){
   *{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important;}
@@ -405,16 +413,16 @@ footer .credit{margin-top:2.4rem;font-family:'Poppins',sans-serif;font-size:.68r
 <!-- Nav -->
 <nav id="mainNav">
   <div class="nav-logo">V &amp; A</div>
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <button class="nav-toggle" id="navToggle" aria-label="Buksan ang menu"><span></span><span></span><span></span></button>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#wedding">Our Wedding</a></li>
-    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#home">Simula</a></li>
+    <li><a href="#wedding">Ang Aming Kasal</a></li>
+    <li><a href="#timeline">Programa</a></li>
     <li><a href="#entourage">Entourage</a></li>
-    <li><a href="#dresscode">Dress Code</a></li>
-    <li><a href="#gifts">Gifts</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#faqs">FAQs</a></li>
+    <li><a href="#dresscode">Kasuutan</a></li>
+    <li><a href="#gifts">Regalo</a></li>
+    <li><a href="#gallery">Album</a></li>
+    <li><a href="#faqs">Mga Katanungan</a></li>
     <li><a href="#rsvp">RSVP</a></li>
   </ul>
 </nav>
@@ -426,40 +434,40 @@ footer .credit{margin-top:2.4rem;font-family:'Poppins',sans-serif;font-size:.68r
       <svg viewBox="0 0 200 200" fill="none"><g opacity="0.55"><path d="M20 20 Q40 60 30 100 Q60 90 90 110 Q70 60 100 30 Q60 40 20 20Z" fill="#D9BD8E"/><path d="M15 15 Q50 30 55 70" stroke="#B8935F" stroke-width="1.5" fill="none"/><circle cx="35" cy="35" r="9" fill="#BA6A4A" opacity="0.6"/></g></svg>
     </div>
   </div>
-  <p class="hero-eyebrow">We Are Getting Married</p>
+  <p class="hero-eyebrow">Kami ay Ikakasal</p>
   <h1 class="hero-names">Vinz<span class="hero-amp"><br>&amp;</span><br>Azylle</h1>
   <p class="hero-meta">
-    October 26, 2026 <span class="divider-dot">•</span> 9:00 AM
+    Oktubre 26, 2026 <span class="divider-dot">•</span> 9:00 NU
     <span class="venue">Emily's Garden — 353 Youngland Rd., Baguio, Benguet</span>
   </p>
 
   <div class="countdown-wrap" id="countdown">
-    <div class="count-box"><span class="count-num" id="cd-days">00</span><span class="count-label">Days</span></div>
-    <div class="count-box"><span class="count-num" id="cd-hours">00</span><span class="count-label">Hours</span></div>
-    <div class="count-box"><span class="count-num" id="cd-mins">00</span><span class="count-label">Minutes</span></div>
-    <div class="count-box"><span class="count-num" id="cd-secs">00</span><span class="count-label">Seconds</span></div>
+    <div class="count-box"><span class="count-num" id="cd-days">00</span><span class="count-label">Araw</span></div>
+    <div class="count-box"><span class="count-num" id="cd-hours">00</span><span class="count-label">Oras</span></div>
+    <div class="count-box"><span class="count-num" id="cd-mins">00</span><span class="count-label">Minuto</span></div>
+    <div class="count-box"><span class="count-num" id="cd-secs">00</span><span class="count-label">Segundo</span></div>
   </div>
 
-  <div class="scroll-cue"><span class="line"></span>Scroll</div>
+  <div class="scroll-cue"><span class="line"></span>Mag-scroll</div>
 </header>
 
 <!-- Our Wedding / Details -->
 <section id="wedding">
   <div class="section-inner">
-    <p class="eyebrow reveal">Save the Date</p>
-    <h2 class="section-title reveal">Our Wedding</h2>
-    <p class="section-sub reveal">Two hearts, one promise, celebrated among the pines of Baguio.</p>
+    <p class="eyebrow reveal">I-save ang Petsa</p>
+    <h2 class="section-title reveal">Ang Aming Kasal</h2>
+    <p class="section-sub reveal">Dalawang puso, isang pangako, ipagdiriwang sa gitna ng mga pino ng Baguio.</p>
     <div class="details-grid">
       <div class="glass-card detail-card reveal">
         <div class="icon">⛪</div>
-        <h3>Ceremony &amp; Reception</h3>
+        <h3>Seremonya at Reception</h3>
         <p>Emily's Garden<br>353 Youngland Rd., Baguio, Benguet</p>
-        <p style="margin-top:.8rem;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--clay);">October 26, 2026 • 9:00 AM</p>
+        <p style="margin-top:.8rem;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--clay);">Oktubre 26, 2026 • 9:00 NU</p>
       </div>
       <div class="glass-card reveal" style="overflow:hidden;">
         <iframe class="map-embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
           src="https://www.google.com/maps?q=Emily%27s+Garden+353+Youngland+Rd+Baguio+Benguet&output=embed"
-          title="Map to Emily's Garden, Baguio"></iframe>
+          title="Mapa patungo sa Emily's Garden, Baguio"></iframe>
       </div>
     </div>
   </div>
@@ -468,15 +476,15 @@ footer .credit{margin-top:2.4rem;font-family:'Poppins',sans-serif;font-size:.68r
 <!-- Timeline -->
 <section id="timeline" style="background:var(--beige);">
   <div class="section-inner">
-    <p class="eyebrow reveal">The Program</p>
-    <h2 class="section-title reveal">Wedding Timeline</h2>
-    <p class="section-sub reveal">A day, unhurried and full of joy.</p>
+    <p class="eyebrow reveal">Ang Programa</p>
+    <h2 class="section-title reveal">Programa ng Kasal</h2>
+    <p class="section-sub reveal">Isang araw, walang pagmamadali at puno ng kaligayahan.</p>
     <div class="timeline">
-      <div class="t-item reveal"><div class="t-dot">⛪</div><div class="t-time">9:00 AM</div><div class="t-title">Ceremony</div></div>
-      <div class="t-item reveal"><div class="t-dot">🍽️</div><div class="t-time">11:00 AM</div><div class="t-title">Miryenda</div></div>
-      <div class="t-item reveal"><div class="t-dot">🎉</div><div class="t-time">11:45 AM</div><div class="t-title">Kasiyahan</div></div>
-      <div class="t-item reveal"><div class="t-dot">🍲</div><div class="t-time">12:30 PM</div><div class="t-title">Tanghalian</div></div>
-      <div class="t-item reveal"><div class="t-dot">🌅</div><div class="t-time">2:30 PM</div><div class="t-title">End of Program</div></div>
+      <div class="t-item reveal"><div class="t-dot">⛪</div><div class="t-time">9:00 NU</div><div class="t-title">Seremonya</div></div>
+      <div class="t-item reveal"><div class="t-dot">🍽️</div><div class="t-time">11:00 NU</div><div class="t-title">Miryenda</div></div>
+      <div class="t-item reveal"><div class="t-dot">🎉</div><div class="t-time">11:45 NU</div><div class="t-title">Kasiyahan</div></div>
+      <div class="t-item reveal"><div class="t-dot">🍲</div><div class="t-time">12:30 NH</div><div class="t-title">Tanghalian</div></div>
+      <div class="t-item reveal"><div class="t-dot">🌅</div><div class="t-time">2:30 NH</div><div class="t-title">Katapusan ng Programa</div></div>
     </div>
   </div>
 </section>
@@ -484,8 +492,8 @@ footer .credit{margin-top:2.4rem;font-family:'Poppins',sans-serif;font-size:.68r
 <!-- Entourage -->
 <section id="entourage">
   <div class="section-inner">
-    <p class="eyebrow reveal">With Gratitude</p>
-    <h2 class="section-title reveal">Our Entourage</h2>
+    <p class="eyebrow reveal">Taos-pusong Pasasalamat</p>
+    <h2 class="section-title reveal">Aming Entourage</h2>
     <div class="rule reveal"></div>
 
     <div class="ent-grid" style="margin-bottom:2rem;">
@@ -498,7 +506,7 @@ footer .credit{margin-top:2.4rem;font-family:'Poppins',sans-serif;font-size:.68r
     <div class="ent-grid" style="margin-bottom:2rem;">
       <div class="glass-card ent-card wide reveal">
         <div class="ent-role">Mga Minamahal na Magulang</div>
-        <div class="ent-pair-list">
+        <div class="ent-2col">
           <span class="ent-name">Ronald Liwanag</span>
           <span class="ent-name">Marilyn Liwanag</span>
           <span class="ent-name">Crisanto Nad (+)</span>
@@ -510,11 +518,15 @@ footer .credit{margin-top:2.4rem;font-family:'Poppins',sans-serif;font-size:.68r
     <div class="ent-grid" style="margin-bottom:2rem;">
       <div class="glass-card ent-card wide reveal">
         <div class="ent-role">Mga Pangunahing Gabay</div>
-        <div class="ent-pair-list">
-          <span class="ent-name">Edgardo Gutang</span><span class="ent-name">Paz Gutang</span>
-          <span class="ent-name">Aldrin Sadang</span><span class="ent-name">Eva Deveraturda</span>
-          <span class="ent-name">Jomel Libut</span><span class="ent-name">Charito Magtaan</span>
-          <span class="ent-name">Jun Ramirez</span><span class="ent-name">Beth Ramirez</span>
+        <div class="ent-2col">
+          <span class="ent-name">Edgardo Gutang</span>
+          <span class="ent-name">Paz Gutang</span>
+          <span class="ent-name">Aldrin Sadang</span>
+          <span class="ent-name">Eva Deveraturda</span>
+          <span class="ent-name">Jomel Libut</span>
+          <span class="ent-name">Charito Magtaan</span>
+          <span class="ent-name">Jun Ramirez</span>
+          <span class="ent-name">Beth Ramirez</span>
           <span class="ent-name">Thad Lazatin</span>
         </div>
       </div>
@@ -546,23 +558,23 @@ footer .credit{margin-top:2.4rem;font-family:'Poppins',sans-serif;font-size:.68r
         <div class="ent-name">Atty. Joey Lacas<span class="sub">Atty. Ma. Erika Amor Lacas</span></div>
       </div>
       <div class="glass-card ent-card reveal">
-        <div class="ent-role">Bible Bearer</div>
+        <div class="ent-role">Tagapagdala ng Bibliya</div>
         <div class="ent-name">Patrick Deveraturda</div>
       </div>
       <div class="glass-card ent-card reveal">
-        <div class="ent-role">Arrhae Bearer</div>
+        <div class="ent-role">Tagapagdala ng Arrhae</div>
         <div class="ent-name">Jonn Edric Gutang</div>
       </div>
       <div class="glass-card ent-card reveal">
-        <div class="ent-role">Ring Bearer</div>
+        <div class="ent-role">Tagapagdala ng Singsing</div>
         <div class="ent-name">Denise Deveraturda</div>
       </div>
       <div class="glass-card ent-card reveal">
-        <div class="ent-role">Flower Boys</div>
+        <div class="ent-role">Mga Batang May Dalang Bulaklak</div>
         <div class="ent-name">Aaron Magtaan<span class="sub">Enrico Magtaan</span></div>
       </div>
       <div class="glass-card ent-card reveal">
-        <div class="ent-role">Banner Bearers</div>
+        <div class="ent-role">Tagapagdala ng Banner</div>
         <div class="ent-name">Savion Pingol<span class="sub">Savien Pingol</span></div>
       </div>
     </div>
@@ -572,19 +584,19 @@ footer .credit{margin-top:2.4rem;font-family:'Poppins',sans-serif;font-size:.68r
 <!-- Dress Code -->
 <section id="dresscode" style="background:var(--beige);">
   <div class="section-inner">
-    <p class="eyebrow reveal">What to Wear</p>
-    <h2 class="section-title reveal">Dress Code</h2>
-    <p class="section-sub reveal">Modern rustic elegance, dressed in earth and gold.</p>
+    <p class="eyebrow reveal">Anong Isusuot</p>
+    <h2 class="section-title reveal">Kasuutan</h2>
+    <p class="section-sub reveal">Makabago at rustic na eleganysa, nakadamit sa kulay-lupa at ginto.</p>
     <div class="dress-grid">
       <div class="glass-card dress-card reveal">
-        <h4>Guests</h4>
-        <div class="dress-row"><span class="dress-role">Ladies</span><span class="dress-desc">Long Dress or Cocktail Dress</span></div>
-        <div class="dress-row"><span class="dress-role">Gentlemen</span><span class="dress-desc">Long Sleeves or Polo, Black Pants</span></div>
+        <h4>Mga Panauhin</h4>
+        <div class="dress-row"><span class="dress-role">Kababaihan</span><span class="dress-desc">Mahabang Damit o Cocktail Dress</span></div>
+        <div class="dress-row"><span class="dress-role">Kalalakihan</span><span class="dress-desc">Long Sleeves o Polo, Itim na Pantalon</span></div>
       </div>
       <div class="glass-card dress-card reveal">
-        <h4>Principal Sponsors</h4>
-        <div class="dress-row"><span class="dress-role">Ninang</span><span class="dress-desc">Filipiniana-inspired Long Gown</span></div>
-        <div class="dress-row"><span class="dress-role">Ninong</span><span class="dress-desc">Barong, Black Pants</span></div>
+        <h4>Mga Punong Ninong't Ninang</h4>
+        <div class="dress-row"><span class="dress-role">Ninang</span><span class="dress-desc">Mahabang Gown na may Impluwensyang Filipiniana</span></div>
+        <div class="dress-row"><span class="dress-role">Ninong</span><span class="dress-desc">Barong, Itim na Pantalon</span></div>
       </div>
     </div>
     <div class="palette-swatches reveal">
@@ -599,9 +611,9 @@ footer .credit{margin-top:2.4rem;font-family:'Poppins',sans-serif;font-size:.68r
 <!-- Gifts -->
 <section id="gifts">
   <div class="section-inner">
-    <p class="eyebrow reveal">With Love</p>
-    <h2 class="section-title reveal">Gift Section</h2>
-    <p class="gift-msg reveal">Your presence on our special day is already the best gift ever! 🤍<br><br>
+    <p class="eyebrow reveal">May Pagmamahal</p>
+    <h2 class="section-title reveal">Regalo</h2>
+    <p class="gift-msg reveal">Ang inyong presensya sa aming espesyal na araw ay siya na pong pinakamagandang regalo! 🤍<br><br>
     Pero kung giliw niyo po kaming handugan ng regalo, we highly suggest a monetary gift na lang po. Big o small, your contribution will help us start our journey as husband and wife.<br><br>
     Maraming salamat po! 🤎</p>
     <div class="qr-grid">
@@ -624,13 +636,13 @@ footer .credit{margin-top:2.4rem;font-family:'Poppins',sans-serif;font-size:.68r
 <!-- Playlist -->
 <section style="background:var(--beige);">
   <div class="section-inner">
-    <p class="eyebrow reveal">Set the Mood</p>
-    <h2 class="section-title reveal">Wedding Playlist</h2>
+    <p class="eyebrow reveal">Bagay sa Mood</p>
+    <h2 class="section-title reveal">Playlist ng Kasal</h2>
     <div class="glass-card playlist-card reveal">
       <h3>Dulo ng Pahina</h3>
       <p class="artist">Wilbert Ross</p>
       <div class="yt-wrap">
-        <iframe id="ytPlaylist" src="https://www.youtube.com/embed/Oq4kJ1hJ5Ks?enablejsapi=1" title="Dulo ng Pahina - Wilbert Ross" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>
+        <iframe id="ytPlaylist" src="https://www.youtube.com/embed/Oq4kJ1hJ5Ks" title="Dulo ng Pahina - Wilbert Ross" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>
       </div>
     </div>
   </div>
@@ -639,25 +651,25 @@ footer .credit{margin-top:2.4rem;font-family:'Poppins',sans-serif;font-size:.68r
 <!-- Gallery Upload -->
 <section id="gallery">
   <div class="section-inner gallery-upload">
-    <p class="eyebrow reveal">Help Us Remember</p>
-    <h2 class="section-title reveal">Share Your Captured Moments</h2>
-    <p class="section-sub reveal">Snapped a beautiful moment? We'd love to see it through your eyes.</p>
-    <a class="upload-btn reveal" href="https://drive.google.com/drive/folders/1yKMwEDTNWp5hN_gMSoNU-O3CFolnJEEh" target="_blank" rel="noopener">Upload Photos &amp; Videos</a>
+    <p class="eyebrow reveal">Tulungan Kaming Alalahanin</p>
+    <h2 class="section-title reveal">Ibahagi ang mga Nakuhang Sandali</h2>
+    <p class="section-sub reveal">May nakuha kang magandang sandali? Gusto naming makita ito sa inyong mga mata.</p>
+    <a class="upload-btn reveal" href="https://drive.google.com/drive/folders/1yKMwEDTNWp5hN_gMSoNU-O3CFolnJEEh" target="_blank" rel="noopener">Mag-upload ng Larawan at Video</a>
   </div>
 </section>
 
 <!-- Prenup -->
 <section style="background:var(--beige);">
   <div class="section-inner">
-    <p class="eyebrow reveal">Coming Soon</p>
-    <h2 class="section-title reveal">Our Prenup Photos &amp; Videos</h2>
+    <p class="eyebrow reveal">Malapit Nang Ilabas</p>
+    <h2 class="section-title reveal">Aming mga Larawan at Video sa Prenup</h2>
     <div class="prenup-grid">
-      <div class="prenup-item reveal"><span>To be updated</span></div>
-      <div class="prenup-item reveal"><span>To be updated</span></div>
-      <div class="prenup-item reveal"><span>To be updated</span></div>
-      <div class="prenup-item reveal"><span>To be updated</span></div>
-      <div class="prenup-item reveal"><span>To be updated</span></div>
-      <div class="prenup-item reveal"><span>To be updated</span></div>
+      <div class="prenup-item reveal"><span>Ia-update pa</span></div>
+      <div class="prenup-item reveal"><span>Ia-update pa</span></div>
+      <div class="prenup-item reveal"><span>Ia-update pa</span></div>
+      <div class="prenup-item reveal"><span>Ia-update pa</span></div>
+      <div class="prenup-item reveal"><span>Ia-update pa</span></div>
+      <div class="prenup-item reveal"><span>Ia-update pa</span></div>
     </div>
   </div>
 </section>
@@ -666,18 +678,18 @@ footer .credit{margin-top:2.4rem;font-family:'Poppins',sans-serif;font-size:.68r
 <section id="faqs">
   <div class="section-inner" style="max-width:760px;">
     <p class="eyebrow reveal">Mga Katanungan</p>
-    <h2 class="section-title reveal">Frequently Asked Questions</h2>
+    <h2 class="section-title reveal">Mga Madalas Itanong</h2>
     <div class="rule reveal"></div>
 
     <div class="faq-group reveal">
-      <div class="faq-group-title">👥 Guest List &amp; RSVP</div>
+      <div class="faq-group-title">👥 Listahan ng Panauhin at RSVP</div>
       <div class="acc-item">
         <button class="acc-q">Pwede ba akong magdala ng Plus-One o kasama?<span class="plus">+</span></button>
         <div class="acc-a"><div class="acc-a-inner">Eksklusibo lamang ang okasyong ito para sa mga may imbitasyon. Paki-tiyak ang nakalaang bilang ng upuan sa inyong invite. Ang mga wala sa listahan ay hindi makakapasok. Mahigpit na ipinatutupad: "No RSVP, No Entry."</div></div>
       </div>
       <div class="acc-item">
         <button class="acc-q">Pwede bang isama ang mga bata?<span class="plus">+</span></button>
-        <div class="acc-a"><div class="acc-a-inner">We love your kids, pero ang ating kasal ay adults-only event po muna — maliban sa ilang kapamilya at sa entourage.</div></div>
+        <div class="acc-a"><div class="acc-a-inner">Mahal namin ang inyong mga anak, pero ang aming kasal ay adults-only event po muna — maliban sa ilang kapamilya at sa entourage.</div></div>
       </div>
       <div class="acc-item">
         <button class="acc-q">Kailan ang deadline ng RSVP?<span class="plus">+</span></button>
@@ -694,10 +706,10 @@ footer .credit{margin-top:2.4rem;font-family:'Poppins',sans-serif;font-size:.68r
     </div>
 
     <div class="faq-group reveal">
-      <div class="faq-group-title">📍 Venue, Schedule &amp; Attire</div>
+      <div class="faq-group-title">📍 Lugar, Iskedyul, at Kasuutan</div>
       <div class="acc-item">
         <button class="acc-q">Anong oras ako dapat dumating?<span class="plus">+</span></button>
-        <div class="acc-a"><div class="acc-a-inner">Magsisimula ang kasal nang eksaktong 9:00 AM, kaya dapat 8:30 AM nandoon na kayo para iwas-haggard sa pag-park at registration. Huwag po tayong malalate! Walang Filipino Time!</div></div>
+        <div class="acc-a"><div class="acc-a-inner">Magsisimula ang kasal nang eksaktong 9:00 NU, kaya dapat 8:30 NU nandoon na kayo para iwas-haggard sa pag-park at registration. Huwag po tayong malalate! Walang Filipino Time!</div></div>
       </div>
       <div class="acc-item">
         <button class="acc-q">May parking ba sa venue?<span class="plus">+</span></button>
@@ -710,10 +722,10 @@ footer .credit{margin-top:2.4rem;font-family:'Poppins',sans-serif;font-size:.68r
     </div>
 
     <div class="faq-group reveal">
-      <div class="faq-group-title">🏡 Accommodations &amp; Rooms</div>
+      <div class="faq-group-title">🏡 Tuluyan at mga Kwarto</div>
       <div class="acc-item">
         <button class="acc-q">Libre ba ang accommodation namin?<span class="plus">+</span></button>
-        <div class="acc-a"><div class="acc-a-inner">Yes! Sagot na namin ang room ninyo sa venue para hassle-free ang inyong stay.<br>Check-in: Linggo, Oct 25 at 2:00 PM<br>Check-out: Lunes, Oct 26 (pagkatapos ng event)</div></div>
+        <div class="acc-a"><div class="acc-a-inner">Yes! Sagot na namin ang room ninyo sa venue para hassle-free ang inyong stay.<br>Check-in: Linggo, Oct 25 alas-2:00 NH<br>Check-out: Lunes, Oct 26 (pagkatapos ng event)</div></div>
       </div>
       <div class="acc-item">
         <button class="acc-q">Paano ang room assignments?<span class="plus">+</span></button>
@@ -734,12 +746,12 @@ footer .credit{margin-top:2.4rem;font-family:'Poppins',sans-serif;font-size:.68r
 <!-- RSVP -->
 <section id="rsvp" class="rsvp-section">
   <div class="section-inner">
-    <p class="eyebrow reveal">Kindly Respond</p>
+    <p class="eyebrow reveal">Mangyaring Sumagot</p>
     <h2 class="section-title reveal">RSVP</h2>
     <div class="rsvp-banner reveal">
-      <div class="deadline">RSVP Deadline — September 17, 2026</div>
-      <div class="note">Kindly submit your RSVP on or before September 17, 2026.</div>
-      <span class="strict">No RSVP • No Entry</span>
+      <div class="deadline">Huling Araw ng RSVP — Setyembre 17, 2026</div>
+      <div class="note">Mangyaring isumite ang inyong RSVP sa o bago mag-Setyembre 17, 2026.</div>
+      <span class="strict">Walang RSVP • Walang Pasukan</span>
     </div>
     <div class="rsvp-frame-wrap reveal">
       <iframe src="https://script.google.com/macros/s/AKfycbzeHpMDFGmPKdD1l1Jn-29heB3BUBb6E-CNfsXp5r5FzGMnhsUflqOrrdg1_rP2euJzWg/exec" title="RSVP Form" loading="lazy"></iframe>
@@ -750,13 +762,11 @@ footer .credit{margin-top:2.4rem;font-family:'Poppins',sans-serif;font-size:.68r
 <!-- Footer -->
 <footer>
   <span class="script">Vinz &amp; Azylle</span>
-  <p>We can't wait to celebrate this beautiful day with you.<br>Thank you for being part of our love story.<br><br>With love,<br>Vinz &amp; Azylle</p>
-  <div class="hashtag">#VinzAndAzylle2026</div>
-  <div class="credit">Made with love · Love, Anne</div>
+  <p>Hindi na kami makapaghintay na ipagdiwang ang magandang araw na ito kasama kayo.<br>Salamat sa pagiging bahagi ng aming love story.<br><br>Taos-puso,<br>Vinz &amp; Azylle</p>
+  <div class="credit">Created by <a href="https://tiktok.com/@loveanne.ph" target="_blank" rel="noopener">Love, Anne</a></div>
 </footer>
 
-<button class="float-btn" id="musicToggle" aria-label="Toggle background music" title="Music">🔇</button>
-<button class="float-btn" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+<button class="float-btn" id="backToTop" aria-label="Bumalik sa itaas" title="Bumalik sa itaas">↑</button>
 
 <script>
 // ===== Loader =====
@@ -844,36 +854,6 @@ document.querySelectorAll('.acc-item').forEach(item => {
 // ===== Back to top =====
 document.getElementById('backToTop').addEventListener('click', () => {
   window.scrollTo({top:0, behavior:'smooth'});
-});
-
-// ===== Background music toggle (controls the playlist embed's mute state via a hidden mirrored player) =====
-let musicOn = false;
-const musicBtn = document.getElementById('musicToggle');
-let ytAudio;
-function loadYTApi(){
-  const tag = document.createElement('script');
-  tag.src = 'https://www.youtube.com/iframe_api';
-  document.body.appendChild(tag);
-}
-window.onYouTubeIframeAPIReady = function(){
-  ytAudio = new YT.Player('ytHiddenPlayer', {
-    height:'0', width:'0', videoId:'Oq4kJ1hJ5Ks',
-    playerVars:{ autoplay:0, loop:1, playlist:'Oq4kJ1hJ5Ks' },
-    events:{ onReady: () => {} }
-  });
-};
-const hiddenDiv = document.createElement('div');
-hiddenDiv.id = 'ytHiddenPlayer';
-hiddenDiv.style.cssText = 'position:fixed;bottom:0;left:0;width:0;height:0;opacity:0;pointer-events:none;';
-document.body.appendChild(hiddenDiv);
-loadYTApi();
-
-musicBtn.addEventListener('click', () => {
-  musicOn = !musicOn;
-  musicBtn.textContent = musicOn ? '🔊' : '🔇';
-  if(!ytAudio || !ytAudio.playVideo) return;
-  if(musicOn){ ytAudio.unMute(); ytAudio.playVideo(); }
-  else { ytAudio.pauseVideo(); }
 });
 </script>
 </body>
