@@ -343,8 +343,43 @@ section{padding:clamp(4rem,10vw,7rem) 1.5rem;position:relative;}
 .rsvp-banner .deadline{font-family:'Cinzel',serif;color:var(--gold-light);font-size:1rem;letter-spacing:.06em;margin-bottom:.3rem;}
 .rsvp-banner .note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;}
 .rsvp-banner .strict{display:block;margin-top:.5rem;background:var(--gold-light);color:var(--espresso);font-weight:600;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;padding:.35rem;border-radius:2px;}
-.rsvp-frame-wrap{max-width:640px;margin:0 auto;background:var(--ivory);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);}
-.rsvp-frame-wrap iframe{width:100%;height:820px;border:0;display:block;}
+/* RSVP Button */
+.rsvp-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.6rem;
+  padding:1rem 2.8rem;
+  background:linear-gradient(135deg,var(--gold),var(--clay));
+  color:var(--ivory);
+  font-family:'Cinzel',serif;
+  font-size:.82rem;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  border-radius:var(--radius);
+  text-decoration:none;
+  box-shadow:var(--shadow-lg);
+  transition:all .35s var(--ease);
+}
+
+.rsvp-btn::after{
+  content:"→";
+  transition:transform .3s var(--ease);
+}
+
+.rsvp-btn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 40px rgba(0,0,0,.25);
+  background:linear-gradient(135deg,var(--clay),var(--clay-dark));
+}
+
+.rsvp-btn:hover::after{
+  transform:translateX(4px);
+}
+
+.rsvp-btn:active{
+  transform:translateY(-1px);
+}
 
 /* ===== Prenup Gallery ===== */
 .prenup-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;}
@@ -753,9 +788,15 @@ footer .credit a:hover{opacity:.75;}
       <div class="note">Mangyaring isumite ang inyong RSVP sa o bago mag-Setyembre 17, 2026.</div>
       <span class="strict">Walang RSVP • Walang Pasukan</span>
     </div>
-    <div class="rsvp-frame-wrap reveal">
-      <iframe src="https://script.google.com/macros/s/AKfycbzeHpMDFGmPKdD1l1Jn-29heB3BUBb6E-CNfsXp5r5FzGMnhsUflqOrrdg1_rP2euJzWg/exec" title="RSVP Form" loading="lazy"></iframe>
-    </div>
+    <div class="reveal" style="text-align:center;">
+  <a
+    href="https://script.google.com/macros/s/AKfycbzeHpMDFGmPKdD1l1Jn-29heB3BUBb6E-CNfsXp5r5FzGMnhsUflqOrrdg1_rP2euJzWg/exec"
+    target="_blank"
+    rel="noopener"
+    class="rsvp-btn">
+    I-submit ang iyong RSVP dito.
+  </a>
+</div>
   </div>
 </section>
 
