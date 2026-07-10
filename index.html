@@ -312,12 +312,22 @@ section{padding:clamp(4rem,10vw,7rem) 1.5rem;position:relative;}
 .gift-msg{max-width:600px;margin:0 auto 3rem;text-align:center;font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--espresso);}
 .qr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.6rem;max-width:760px;margin:0 auto;}
 .qr-card{padding:2rem 1.4rem;text-align:center;}
-.qr-placeholder{
-  width:150px;height:150px;margin:0 auto 1.2rem;
-  background:repeating-linear-gradient(45deg,var(--beige),var(--beige) 10px,#eee2cd 10px,#eee2cd 20px);
-  border:1px dashed var(--gold);border-radius:6px;
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Cinzel',serif;font-size:.7rem;color:var(--sage-taupe);text-transform:uppercase;letter-spacing:.08em;
+.qr-image{
+  width:170px;
+  height:170px;
+  margin:0 auto 1.2rem;
+  object-fit:contain;
+  border-radius:10px;
+  background:#fff;
+  padding:10px;
+  border:1px solid rgba(184,147,95,.25);
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+  transition:transform .35s var(--ease), box-shadow .35s var(--ease);
+}
+
+.qr-card:hover .qr-image{
+  transform:scale(1.04);
+  box-shadow:0 16px 32px rgba(0,0,0,.15);
 }
 .qr-bank{font-family:'Cinzel',serif;font-size:.95rem;color:var(--clay);letter-spacing:.06em;}
 
@@ -659,19 +669,32 @@ footer .credit a:hover{opacity:.75;}
     Pero kung giliw niyo po kaming handugan ng regalo, we highly suggest a monetary gift na lang po. Big o small, your contribution will help us start our journey as husband and wife.<br><br>
     Maraming salamat po! 🤎</p>
     <div class="qr-grid">
-      <div class="glass-card qr-card reveal">
-        <div class="qr-placeholder">Metrobank QR</div>
-        <div class="qr-bank">Metrobank</div>
-      </div>
-      <div class="glass-card qr-card reveal">
-        <div class="qr-placeholder">Landbank QR</div>
-        <div class="qr-bank">Landbank</div>
-      </div>
-      <div class="glass-card qr-card reveal">
-        <div class="qr-placeholder">GCash QR</div>
-        <div class="qr-bank">GCash</div>
-      </div>
-    </div>
+
+  <div class="glass-card qr-card reveal">
+    <img
+      src="https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle/Metrobank%20QR.png"
+      alt="Metrobank QR"
+      class="qr-image">
+    <div class="qr-bank">Metrobank</div>
+  </div>
+
+  <div class="glass-card qr-card reveal">
+    <img
+      src="https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle/Landbank%20QR.png"
+      alt="Landbank QR"
+      class="qr-image">
+    <div class="qr-bank">Landbank</div>
+  </div>
+
+  <div class="glass-card qr-card reveal">
+    <img
+      src="https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle/Gcash%20QR.png"
+      alt="GCash QR"
+      class="qr-image">
+    <div class="qr-bank">GCash</div>
+  </div>
+
+</div>
   </div>
 </section>
 
