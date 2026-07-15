@@ -118,6 +118,8 @@ nav.scrolled .nav-links a{color:var(--espresso);}
 .nav-toggle span{width:26px;height:2px;background:var(--ivory);transition:.3s;}
 nav.scrolled .nav-toggle span{background:var(--espresso);}
 
+.nav-photo-item{display:none;}
+
 @media(max-width:900px){
   .nav-links{
     position:fixed;top:0;right:-100%;width:78%;max-width:320px;height:100vh;
@@ -131,6 +133,12 @@ nav.scrolled .nav-toggle span{background:var(--espresso);}
   .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
   .nav-toggle.open span:nth-child(2){opacity:0;}
   .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .nav-photo-item{
+    display:block;align-self:center;width:88px;height:88px;
+    border-radius:50%;overflow:hidden;margin-bottom:1.8rem;
+    border:2px solid var(--gold-light);box-shadow:0 6px 20px rgba(0,0,0,.35);
+  }
+  .nav-photo-item img{width:100%;height:100%;object-fit:cover;display:block;}
 }
 
 /* ===== Hero ===== */
@@ -142,11 +150,17 @@ nav.scrolled .nav-toggle span{background:var(--espresso);}
 .hero-bg{
   position:absolute;inset:0;z-index:-1;
   background:
-    linear-gradient(180deg, rgba(58,42,34,.55) 0%, rgba(58,42,34,.35) 45%, rgba(58,42,34,.75) 100%),
-    radial-gradient(ellipse at 30% 20%, rgba(186,106,74,.35), transparent 55%),
-    radial-gradient(ellipse at 75% 80%, rgba(166,139,109,.4), transparent 55%),
-    linear-gradient(135deg,#6b4a38,#4A342A 55%,#3a2a22);
+    linear-gradient(180deg, rgba(58,42,34,.62) 0%, rgba(58,42,34,.4) 45%, rgba(58,42,34,.8) 100%),
+    radial-gradient(ellipse at 30% 20%, rgba(186,106,74,.3), transparent 55%),
+    radial-gradient(ellipse at 75% 80%, rgba(166,139,109,.35), transparent 55%),
+    url('https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle%20Prenup%20Photos/0002.jpg');
+  background-size:cover;
+  background-position:center 25%;
   will-change:transform;
+}
+.hero-bg::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(107,74,56,.35),rgba(74,52,42,.5) 55%,rgba(58,42,34,.65));
 }
 .hero-eyebrow{
   color:var(--gold-light);font-family:'Cinzel',serif;letter-spacing:.35em;
@@ -412,9 +426,14 @@ section{padding:clamp(4rem,10vw,7rem) 1.5rem;position:relative;}
 .prenup-item{
   aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;position:relative;
   background:linear-gradient(135deg,var(--beige),#e4d5bc);
-  display:flex;align-items:center;justify-content:center;
+  display:block;
   border:1px solid rgba(184,147,95,.3);
+  box-shadow:var(--shadow);
+  transition:transform .4s var(--ease), box-shadow .4s var(--ease);
 }
+.prenup-item:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
+.prenup-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--ease);}
+.prenup-item:hover img{transform:scale(1.06);}
 .prenup-item span{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--sage-taupe);font-size:.9rem;}
 
 /* ===== FAQ ===== */
@@ -476,6 +495,7 @@ footer .credit a:hover{opacity:.75;}
   <div class="nav-logo">V &amp; A</div>
   <button class="nav-toggle" id="navToggle" aria-label="Buksan ang menu"><span></span><span></span><span></span></button>
   <ul class="nav-links" id="navLinks">
+    <li class="nav-photo-item"><img src="https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle%20Prenup%20Photos/0004.jpg" alt="Vinz at Azylle" loading="lazy"></li>
     <li><a href="#home">Simula</a></li>
     <li><a href="#wedding">Ang Aming Kasal</a></li>
     <li><a href="#timeline">Programa</a></li>
@@ -513,7 +533,7 @@ footer .credit a:hover{opacity:.75;}
 </header>
 
 <!-- Our Wedding / Details -->
-<section id="wedding">
+<section id="wedding" style="background-image:linear-gradient(rgba(250,243,232,0.93),rgba(250,243,232,0.93)),url('https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle%20Prenup%20Photos/0003.jpg');background-size:cover;background-position:center;">
   <div class="section-inner">
     <p class="eyebrow reveal">I-save ang Petsa</p>
     <h2 class="section-title reveal">Ang Aming Kasal</h2>
@@ -535,7 +555,7 @@ footer .credit a:hover{opacity:.75;}
 </section>
 
 <!-- Timeline -->
-<section id="timeline" style="background:var(--beige);">
+<section id="timeline" style="background-image:linear-gradient(rgba(240,230,214,0.92),rgba(240,230,214,0.92)),url('https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle%20Prenup%20Photos/0004.jpg');background-size:cover;background-position:center;">
   <div class="section-inner">
     <p class="eyebrow reveal">Ang Programa</p>
     <h2 class="section-title reveal">Programa ng Kasal</h2>
@@ -551,7 +571,7 @@ footer .credit a:hover{opacity:.75;}
 </section>
 
 <!-- Entourage -->
-<section id="entourage">
+<section id="entourage" style="background-image:linear-gradient(rgba(250,243,232,0.93),rgba(250,243,232,0.93)),url('https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle%20Prenup%20Photos/0005.jpg');background-size:cover;background-position:center;">
   <div class="section-inner">
     <p class="eyebrow reveal">Taos-pusong Pasasalamat</p>
     <h2 class="section-title reveal">Aming Entourage</h2>
@@ -643,7 +663,7 @@ footer .credit a:hover{opacity:.75;}
 </section>
 
 <!-- Dress Code -->
-<section id="dresscode" style="background:var(--beige);">
+<section id="dresscode" style="background-image:linear-gradient(rgba(240,230,214,0.92),rgba(240,230,214,0.92)),url('https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle%20Prenup%20Photos/0006.JPG');background-size:cover;background-position:center;">
   <div class="section-inner">
     <p class="eyebrow reveal">Anong Isusuot</p>
     <h2 class="section-title reveal">Kasuotan</h2>
@@ -675,7 +695,7 @@ footer .credit a:hover{opacity:.75;}
 </section>
 
 <!-- Gifts -->
-<section id="gifts">
+<section id="gifts" style="background-image:linear-gradient(rgba(250,243,232,0.93),rgba(250,243,232,0.93)),url('https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle%20Prenup%20Photos/0007.jpg');background-size:cover;background-position:center;">
   <div class="section-inner">
     <p class="eyebrow reveal">May Pagmamahal</p>
     <h2 class="section-title reveal">Regalo</h2>
@@ -713,7 +733,7 @@ footer .credit a:hover{opacity:.75;}
 </section>
 
 <!-- Playlist -->
-<section style="background:var(--beige);">
+<section style="background-image:linear-gradient(rgba(240,230,214,0.92),rgba(240,230,214,0.92)),url('https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle%20Prenup%20Photos/0008.jpg');background-size:cover;background-position:center;">
   <div class="section-inner">
     <p class="eyebrow reveal">Bagay sa Mood</p>
     <h2 class="section-title reveal">Playlist ng Kasal</h2>
@@ -727,7 +747,7 @@ footer .credit a:hover{opacity:.75;}
 </section>
 
 <!-- Gallery Upload -->
-<section id="gallery">
+<section id="gallery" style="background-image:linear-gradient(rgba(250,243,232,0.93),rgba(250,243,232,0.93)),url('https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle%20Prenup%20Photos/0009.JPG');background-size:cover;background-position:center;">
   <div class="section-inner gallery-upload">
     <p class="eyebrow reveal">Tulungan Kaming Alalahanin</p>
     <h2 class="section-title reveal">Ibahagi ang mga Nakuhang Sandali</h2>
@@ -739,21 +759,23 @@ footer .credit a:hover{opacity:.75;}
 <!-- Prenup -->
 <section style="background:var(--beige);">
   <div class="section-inner">
-    <p class="eyebrow reveal">Malapit Nang Ilabas</p>
-    <h2 class="section-title reveal">Aming mga Larawan at Video sa Prenup</h2>
+    <p class="eyebrow reveal">Aming Alaala</p>
+    <h2 class="section-title reveal">Aming mga Larawan sa Prenup</h2>
     <div class="prenup-grid">
-      <div class="prenup-item reveal"><span>Ia-update pa</span></div>
-      <div class="prenup-item reveal"><span>Ia-update pa</span></div>
-      <div class="prenup-item reveal"><span>Ia-update pa</span></div>
-      <div class="prenup-item reveal"><span>Ia-update pa</span></div>
-      <div class="prenup-item reveal"><span>Ia-update pa</span></div>
-      <div class="prenup-item reveal"><span>Ia-update pa</span></div>
+      <a class="prenup-item reveal" href="https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle%20Prenup%20Photos/0002.jpg" target="_blank" rel="noopener"><img src="https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle%20Prenup%20Photos/0002.jpg" alt="Vinz at Azylle prenup photo" loading="lazy"></a>
+      <a class="prenup-item reveal" href="https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle%20Prenup%20Photos/0003.jpg" target="_blank" rel="noopener"><img src="https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle%20Prenup%20Photos/0003.jpg" alt="Vinz at Azylle prenup photo" loading="lazy"></a>
+      <a class="prenup-item reveal" href="https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle%20Prenup%20Photos/0004.jpg" target="_blank" rel="noopener"><img src="https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle%20Prenup%20Photos/0004.jpg" alt="Vinz at Azylle prenup photo" loading="lazy"></a>
+      <a class="prenup-item reveal" href="https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle%20Prenup%20Photos/0005.jpg" target="_blank" rel="noopener"><img src="https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle%20Prenup%20Photos/0005.jpg" alt="Vinz at Azylle prenup photo" loading="lazy"></a>
+      <a class="prenup-item reveal" href="https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle%20Prenup%20Photos/0006.JPG" target="_blank" rel="noopener"><img src="https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle%20Prenup%20Photos/0006.JPG" alt="Vinz at Azylle prenup photo" loading="lazy"></a>
+      <a class="prenup-item reveal" href="https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle%20Prenup%20Photos/0007.jpg" target="_blank" rel="noopener"><img src="https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle%20Prenup%20Photos/0007.jpg" alt="Vinz at Azylle prenup photo" loading="lazy"></a>
+      <a class="prenup-item reveal" href="https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle%20Prenup%20Photos/0008.jpg" target="_blank" rel="noopener"><img src="https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle%20Prenup%20Photos/0008.jpg" alt="Vinz at Azylle prenup photo" loading="lazy"></a>
+      <a class="prenup-item reveal" href="https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle%20Prenup%20Photos/0009.JPG" target="_blank" rel="noopener"><img src="https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle%20Prenup%20Photos/0009.JPG" alt="Vinz at Azylle prenup photo" loading="lazy"></a>
     </div>
   </div>
 </section>
 
 <!-- FAQs -->
-<section id="faqs">
+<section id="faqs" style="background-image:linear-gradient(rgba(250,243,232,0.93),rgba(250,243,232,0.93)),url('https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle%20Prenup%20Photos/0002.jpg');background-size:cover;background-position:center;">
   <div class="section-inner" style="max-width:760px;">
     <p class="eyebrow reveal">Mga Katanungan</p>
     <h2 class="section-title reveal">Mga Madalas Itanong</h2>
@@ -822,7 +844,7 @@ footer .credit a:hover{opacity:.75;}
 </section>
 
 <!-- RSVP -->
-<section id="rsvp" class="rsvp-section">
+<section id="rsvp" class="rsvp-section" style="background-image:linear-gradient(rgba(74,52,42,0.9),rgba(74,52,42,0.9)),url('https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle%20Prenup%20Photos/0005.jpg');background-size:cover;background-position:center;">
   <div class="section-inner">
     <p class="eyebrow reveal">Mangyaring Sumagot</p>
     <h2 class="section-title reveal">RSVP</h2>
