@@ -298,18 +298,18 @@ section{padding:clamp(4rem,10vw,7rem) 1.5rem;position:relative;}
 .ent-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.6rem;}
 .ent-card{padding:2rem 1.6rem;text-align:center;}
 .ent-role{font-family:'Cinzel',serif;font-size:.85rem;color:var(--clay);letter-spacing:.06em;margin-bottom:1rem;text-transform:uppercase;}
-.ent-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--espresso);}
+.ent-name{font-family:'Cormorant Garamond',serif;font-size:clamp(.85rem,3.6vw,1.15rem);color:var(--espresso);white-space:nowrap;}
 /* Companion name kept the SAME size/weight as the primary name, just on its own line */
-.ent-name .sub{display:block;font-size:1em;opacity:1;font-style:normal;margin-top:.15rem;}
+.ent-name .sub{display:block;font-size:1em;opacity:1;font-style:normal;margin-top:.15rem;white-space:nowrap;}
 .ent-card.wide{grid-column:1 / -1;}
 .ent-pair-list{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem 1.4rem;}
 /* Forced 2-column grid for Magulang / Pangunahing Gabay groups, desktop AND mobile */
 .ent-2col{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:.9rem 1.2rem;
+  gap:.9rem .6rem;
 }
-.ent-2col .ent-name{font-size:1.1rem;}
+.ent-2col .ent-name{font-size:clamp(.72rem,3.3vw,1.1rem);}
 
 /* ===== Dress Code ===== */
 .dress-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.8rem;}
@@ -344,22 +344,6 @@ section{padding:clamp(4rem,10vw,7rem) 1.5rem;position:relative;}
   box-shadow:0 16px 32px rgba(0,0,0,.15);
 }
 .qr-bank{font-family:'Cinzel',serif;font-size:.95rem;color:var(--clay);letter-spacing:.06em;}
-
-/* ===== Playlist ===== */
-.playlist-card{max-width:640px;margin:0 auto;padding:2rem;text-align:center;}
-.playlist-card h3{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.4rem;margin-bottom:.2rem;}
-.playlist-card .artist{color:var(--sage-taupe);font-size:.9rem;margin-bottom:1.4rem;}
-.yt-wrap{position:relative;width:100%;padding-top:56.25%;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:var(--espresso);cursor:pointer;}
-.yt-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
-.yt-thumb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-.yt-play-btn{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:72px;height:72px;border-radius:50%;
-  background:rgba(74,52,42,0.75);color:var(--ivory);
-  display:flex;align-items:center;justify-content:center;font-size:1.6rem;
-  border:2px solid var(--gold-light);transition:transform .3s var(--ease), background .3s var(--ease);
-}
-.yt-wrap:hover .yt-play-btn{transform:translate(-50%,-50%) scale(1.08);background:var(--clay);}
 
 /* ===== Gallery Upload ===== */
 .gallery-upload{text-align:center;}
@@ -467,13 +451,16 @@ footer .credit a:hover{opacity:.75;}
 
 /* ===== Floating controls ===== */
 .float-btn{
-  position:fixed;bottom:1.6rem;right:1.6rem;z-index:500;width:46px;height:46px;border-radius:50%;
+  position:fixed;bottom:1.6rem;right:1.6rem;z-index:500;width:50px;height:50px;border-radius:50%;
   background:var(--clay);color:var(--ivory);display:flex;align-items:center;justify-content:center;
-  box-shadow:var(--shadow);transition:opacity .4s,transform .3s;font-size:1.1rem;
+  box-shadow:var(--shadow);transition:opacity .4s,transform .3s,background .3s;font-size:1.2rem;
+  animation:musicPulse 2.6s ease-in-out infinite;
 }
 .float-btn:hover{transform:translateY(-3px);}
-#backToTop{opacity:0;pointer-events:none;}
-#backToTop.show{opacity:1;pointer-events:auto;}
+@keyframes musicPulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(186,106,74,.35), var(--shadow);}
+  50%{box-shadow:0 0 0 10px rgba(186,106,74,0), var(--shadow);}
+}
 
 @media(prefers-reduced-motion:reduce){
   *{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important;}
@@ -565,7 +552,7 @@ footer .credit a:hover{opacity:.75;}
       <div class="t-item reveal"><div class="t-dot">🍽️</div><div class="t-time">11:00 AM</div><div class="t-title">Miryenda</div></div>
       <div class="t-item reveal"><div class="t-dot">🎉</div><div class="t-time">11:45 AM</div><div class="t-title">Kasiyahan</div></div>
       <div class="t-item reveal"><div class="t-dot">🍲</div><div class="t-time">12:30 PM</div><div class="t-title">Tanghalian</div></div>
-      <div class="t-item reveal"><div class="t-dot">🌅</div><div class="t-time">2:30 PM</div><div class="t-title">PAGTATAPOS NG PROGRAMA</div></div>
+      <div class="t-item reveal"><div class="t-dot">🌅</div><div class="t-time">2:30 PM</div><div class="t-title">Pagtatapos ng programa</div></div>
     </div>
   </div>
 </section>
@@ -652,7 +639,7 @@ footer .credit a:hover{opacity:.75;}
       </div>
       <div class="glass-card ent-card reveal">
         <div class="ent-role">Tagapagsaboy ng Bulaklak</div>
-        <div class="ent-name">G. Aaron Magtaan<span class="sub">G. Enrico Magtaan</span></div>
+        <div class="ent-name">G. Aaron Magtaan<span class="sub">G. Enrico Magtaan</span><span class="sub">G. Ian Magtaan</span></div>
       </div>
       <div class="glass-card ent-card reveal">
         <div class="ent-role">Tagapagdala ng Estandarte</div>
@@ -729,20 +716,6 @@ footer .credit a:hover{opacity:.75;}
   </div>
 
 </div>
-  </div>
-</section>
-
-<!-- Playlist -->
-<section style="background-image:linear-gradient(rgba(240,230,214,0.92),rgba(240,230,214,0.92)),url('https://ik.imagekit.io/jcsquo5nq/Vinz%20and%20Azylle%20Prenup%20Photos/0008.jpg');background-size:cover;background-position:center;">
-  <div class="section-inner">
-    <p class="eyebrow reveal">Bagay sa Mood</p>
-    <h2 class="section-title reveal">Playlist ng Kasal</h2>
-    <div class="glass-card playlist-card reveal">
-      <div class="yt-wrap" id="ytFacade" data-video-id="RQBwFMu4NeY">
-        <img class="yt-thumb" src="https://img.youtube.com/vi/RQBwFMu4NeY/maxresdefault.jpg" alt="I-play ang wedding playlist" loading="lazy">
-        <button class="yt-play-btn" id="ytPlayBtn" aria-label="I-play ang video">▶</button>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -872,7 +845,7 @@ footer .credit a:hover{opacity:.75;}
   <div class="credit">Created by <a href="https://tiktok.com/@loveanne.ph" target="_blank" rel="noopener">Love, Anne</a></div>
 </footer>
 
-<button class="float-btn" id="backToTop" aria-label="Bumalik sa itaas" title="Bumalik sa itaas">↑</button>
+<button class="float-btn" id="musicToggle" aria-label="I-toggle ang musika" title="Musika">🔇</button>
 
 <script>
 // ===== Loader =====
@@ -884,7 +857,6 @@ window.addEventListener('load', () => {
 const nav = document.getElementById('mainNav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 60);
-  document.getElementById('backToTop').classList.toggle('show', window.scrollY > 700);
   // simple parallax
   const heroBg = document.getElementById('heroBg');
   if(heroBg && window.scrollY < window.innerHeight){
@@ -957,25 +929,37 @@ document.querySelectorAll('.acc-item').forEach(item => {
   });
 });
 
-// ===== Wedding playlist: click thumbnail to load & autoplay =====
-const ytFacade = document.getElementById('ytFacade');
-if(ytFacade){
-  ytFacade.addEventListener('click', () => {
-    const videoId = ytFacade.getAttribute('data-video-id');
-    const iframe = document.createElement('iframe');
-    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-    iframe.title = 'Wedding Playlist';
-    iframe.allow = 'autoplay; encrypted-media';
-    iframe.allowFullscreen = true;
-    ytFacade.innerHTML = '';
-    ytFacade.style.cursor = 'default';
-    ytFacade.appendChild(iframe);
-  });
-}
+// ===== Background wedding playlist: autoplay muted, toggle for sound =====
+const WEDDING_SONG_ID = 'RQBwFMu4NeY';
+let musicOn = false;
+let ytAudio = null;
+const musicBtn = document.getElementById('musicToggle');
 
-// ===== Back to top =====
-document.getElementById('backToTop').addEventListener('click', () => {
-  window.scrollTo({top:0, behavior:'smooth'});
+const ytHidden = document.createElement('div');
+ytHidden.id = 'ytHiddenPlayer';
+ytHidden.style.cssText = 'position:fixed;bottom:0;left:0;width:0;height:0;opacity:0;pointer-events:none;';
+document.body.appendChild(ytHidden);
+
+const ytTag = document.createElement('script');
+ytTag.src = 'https://www.youtube.com/iframe_api';
+document.body.appendChild(ytTag);
+
+window.onYouTubeIframeAPIReady = function(){
+  ytAudio = new YT.Player('ytHiddenPlayer', {
+    height:'0', width:'0', videoId: WEDDING_SONG_ID,
+    playerVars:{ autoplay:1, mute:1, loop:1, controls:0, playlist: WEDDING_SONG_ID },
+    events:{
+      onReady: (e) => { e.target.mute(); e.target.playVideo(); }
+    }
+  });
+};
+
+musicBtn.addEventListener('click', () => {
+  musicOn = !musicOn;
+  musicBtn.textContent = musicOn ? '🔊' : '🔇';
+  if(!ytAudio || !ytAudio.playVideo) return;
+  if(musicOn){ ytAudio.unMute(); ytAudio.playVideo(); }
+  else { ytAudio.mute(); }
 });
 </script>
 </body>
